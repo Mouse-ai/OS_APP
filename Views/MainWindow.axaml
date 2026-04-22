@@ -3,8 +3,6 @@
         xmlns:models="using:FCFS_Lab.Models"
         x:Class="FCFS_Lab.Views.MainWindow"
         xmlns:views="using:FCFS_Lab.Views"
-        xmlns:vm="using:FCFS_Lab.ViewModels"
-        xmlns:model="using:FCFS_Lab.Models"
         WindowStartupLocation="CenterScreen"
         Title="FCFS Scheduler" Width="850" Height="650"
         Padding="20" 
@@ -13,31 +11,31 @@
 
   <StackPanel Orientation="Vertical" Spacing="15">
     
-    <TextBlock Text="Лабораторная работа: Алгоритм FCFS" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center"/>
+    <TextBlock Text="Лабораторная работа: Алгоритм FCFS" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" />
 
     <Border BorderBrush="LightGray" BorderThickness="1" CornerRadius="8" Padding="15" Background="#F9F9F9">
       <StackPanel Spacing="10">
-        <TextBlock Text="Добавить процесс в очередь:" FontWeight="SemiBold"/>
+        <TextBlock Text="Добавить процесс в очередь:" FontWeight="SemiBold" />
         <StackPanel Orientation="Horizontal" Spacing="10">
-          <TextBlock Text="ID:" VerticalAlignment="Center"/>
-          <TextBox x:Name="NewIdBox" Width="80" PlaceholderText="p3" InputMethod.IsInputMethodEnabled="False"/>
+          <TextBlock Text="ID:" VerticalAlignment="Center" />
+          <TextBox x:Name="NewIdBox" Width="80" PlaceholderText="p3" InputMethod.IsInputMethodEnabled="False" />
           
           <TextBlock Text="Burst Time:" VerticalAlignment="Center" Margin="10,0,0,0"/>
-          <TextBox x:Name="NewBurstBox" Width="80" PlaceholderText="5" InputMethod.IsInputMethodEnabled="False"/>
+          <TextBox x:Name="NewBurstBox" Width="80" PlaceholderText="5" InputMethod.IsInputMethodEnabled="False" />
           
-          <Button Content="+ Добавить" Click="AddProcess_Click" Background="#2196F3" Foreground="White"/>
+          <Button Content="+ Добавить" Click="AddProcess_Click" Background="#2196F3" Foreground="White" />
         </StackPanel>
       </StackPanel>
     </Border>
 
     <StackPanel Orientation="Horizontal" Spacing="10" HorizontalAlignment="Center">
-      <Button Content="🧪 Тест 1 (p0, p1, p2)" Click="Test1_Click" Background="#4CAF50" Foreground="White" Padding="15,8"/>
-      <Button Content="🧪 Тест 2 (p2, p1 ,p0)" Click="Test2_Click" Background="#2196F3" Foreground="White" Padding="15,8"/>
-      <Button Content="🗑️ Очистить всё" Click="Clear_Click" Background="#f44336" Foreground="White" Padding="15,8"/>
-      <Button Content="▶️ Рассчитать" Click="Calculate_Click" Background="#FF9800" Foreground="White" Padding="15,8"/>
+      <Button Content="🧪 Тест 1 (p0, p1, p2)" Click="Test1_Click" Background="#4CAF50" Foreground="White" Padding="15,8" />
+      <Button Content="🧪 Тест 2 (p2, p1, p0)" Click="Test2_Click" Background="#2196F3" Foreground="White" Padding="15,8" />
+      <Button Content="🗑️ Очистить всё" Click="Clear_Click" Background="#f44336" Foreground="White" Padding="15,8" />
+      <Button Content="▶️ Рассчитать" Click="Calculate_Click" Background="#FF9800" Foreground="White" Padding="15,8" />
     </StackPanel>
 
-    <TextBlock Text="Таблица результатов:" FontWeight="SemiBold" FontSize="16"/>
+    <TextBlock Text="Таблица результатов:" FontWeight="SemiBold" FontSize="16" />
     
     <DataGrid x:Name="ProcessesGrid"
               x:DataType="views:MainWindow"
@@ -58,13 +56,13 @@
     </DataGrid>
 
     <StackPanel Orientation="Horizontal" Spacing="40" HorizontalAlignment="Center">
-      <TextBlock x:Name="AvgWaitText" Text="Среднее ожидание: —" FontSize="18" FontWeight="Bold" Foreground="#333"/>
-      <TextBlock x:Name="AvgTotalText" Text="Среднее полное: —" FontSize="18" FontWeight="Bold" Foreground="#333"/>
+      <TextBlock x:Name="AvgWaitText" Text="Среднее ожидание: —" FontSize="18" FontWeight="Bold" Foreground="#333" />
+      <TextBlock x:Name="AvgTotalText" Text="Среднее полное: —" FontSize="18" FontWeight="Bold" Foreground="#333" />
     </StackPanel>
 
-    <TextBlock Text="Диаграмма Ганта (Gantt Chart):" FontWeight="SemiBold" FontSize="16"/>
+    <TextBlock Text="Диаграмма Ганта (Gantt Chart):" FontWeight="SemiBold" FontSize="16" />
     <Border BorderBrush="Gray" BorderThickness="1" CornerRadius="6" Padding="10" Height="80" Background="White">
-      <StackPanel x:Name="GanttPanel" Orientation="Horizontal" VerticalAlignment="Center"/>
+      <StackPanel x:Name="GanttPanel" Orientation="Horizontal" VerticalAlignment="Center" />
     </Border>
     
   </StackPanel>
