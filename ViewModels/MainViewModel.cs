@@ -36,7 +36,7 @@ public class MainViewModel : INotifyPropertyChanged
 
     public void CalculateFCFS()
     {
-        //if (Processes.Count == 0) return;
+        if (Processes.Count == 0) return;
 
         int currentTime = 0;
         GanttBlocks.Clear();

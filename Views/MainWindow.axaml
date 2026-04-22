@@ -4,6 +4,8 @@
         x:Class="FCFS_Lab.Views.MainWindow"
         xmlns:views="using:FCFS_Lab.Views"
         xmlns:vm="using:FCFS_Lab.ViewModels"
+        xmlns:model="using:FCFS_Lab.Models"
+        WindowStartupLocation="CenterScreen"
         Title="FCFS Scheduler" Width="850" Height="650"
         Padding="20" 
         RequestedThemeVariant="Light" 
@@ -44,13 +46,14 @@
               MinHeight="150"
               IsReadOnly="True"
               GridLinesVisibility="All"
+              ColumnWidth="*"
               BorderBrush="LightGray"
               BorderThickness="1">
       <DataGrid.Columns>
-        <DataGridTextColumn Header="Процесс" x:DataType="models:Process" Binding="{Binding Id}" Width="100"/>
-        <DataGridTextColumn Header="CPU Burst" x:DataType="models:Process" Binding="{Binding BurstTime}" Width="100"/>
-        <DataGridTextColumn Header="Время ожидания" x:DataType="models:Process" Binding="{Binding WaitingTime}" Width="120"/>
-        <DataGridTextColumn Header="Полное время" x:DataType="models:Process" Binding="{Binding TurnaroundTime}" Width="120"/>
+        <DataGridTextColumn Header="Процесс" x:DataType="models:Process" Binding="{CompiledBinding Id}" />
+        <DataGridTextColumn Header="CPU Burst" x:DataType="models:Process" Binding="{CompiledBinding BurstTime}" />
+        <DataGridTextColumn Header="Время ожидания" x:DataType="models:Process" Binding="{CompiledBinding WaitingTime}" />
+        <DataGridTextColumn Header="Полное время" x:DataType="models:Process" Binding="{CompiledBinding TurnaroundTime}" />
       </DataGrid.Columns>
     </DataGrid>
 
