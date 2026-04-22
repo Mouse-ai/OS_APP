@@ -14,7 +14,7 @@ namespace FCFS_Lab.Views;
 
 public partial class MainWindow : Window
 {
-    public ObservableCollection<Process> Queue { get; } = new();
+    public ObservableCollection<Process> Queue { get; } = [];
 
     public MainWindow()
     {
@@ -81,7 +81,7 @@ public partial class MainWindow : Window
         if (Queue.Count == 0) return;
 
         int currentTime = 0;
-        foreach (var p in Queue)
+        foreach (ref var p in Queue.ToArray().AsSpan())
         {
             p.WaitingTime = currentTime;
             currentTime += p.BurstTime;
@@ -92,7 +92,10 @@ public partial class MainWindow : Window
         var avgTotal = Queue.Average(p => p.TurnaroundTime);
         AvgWaitText.Text = $"Среднее ожидание: {avgWait:F2}";
         AvgTotalText.Text = $"Среднее полное: {avgTotal:F2}";
-
+        
+        ProcessesGrid.ItemsSource = null;
+        ProcessesGrid.ItemsSource = Queue;
+        ProcessesGrid.UpdateLayout();
         DrawGanttChart();
     }
 
